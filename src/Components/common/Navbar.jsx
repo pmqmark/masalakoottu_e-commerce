@@ -81,9 +81,11 @@ const Navbar = () => {
 
           {/* Cart Button */}
           <div className="relative">
+            <Link to='/cartpage'>
             <button className="p-3 bg-yellow-400 text-green-900 rounded-full shadow-md hover:bg-yellow-500">
               <FaShoppingCart />
             </button>
+            </Link>
             {cartCount > 0 && (
               <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs px-1.5 rounded-full">
                 {cartCount}
