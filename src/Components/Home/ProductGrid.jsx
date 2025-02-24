@@ -30,7 +30,7 @@ const products = [
 
 const ProductGrid = () => {
   return (
-    <div className="p-6">
+    <div className="p-6 bg-white">
       {/* Heading Section */}
       <div className="text-center mb-8">
         <p className="text-orange-600 italic font-semibold">
