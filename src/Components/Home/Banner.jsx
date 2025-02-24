@@ -5,6 +5,9 @@ import { FiChevronRight } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/pagination";
 
+// Import Manrope Font
+import "@fontsource/manrope"; 
+
 const categories = [
   { name: "Masalas and Curry Powders", icon: "🌶️" },
   { name: "Millet Products", icon: "🌾", active: true },
@@ -37,28 +40,40 @@ const Banner = () => {
       <div className="flex w-full">
         {/* Sidebar */}
         <motion.aside
-          className="max-w-[300px] w-full h-auto bg-white text-black shadow-md p-4 ml-[50px] mt-[50px] rounded-[20px]"
+          className="max-w-[300px] w-full h-auto bg-white text-black shadow-md p-4 ml-[80px] mt-[50px] rounded-t-[20px]"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-lg font-bold bg-[#D55C1F] text-white py-3 px-4 w-full rounded-[10px]">
+          <h2 className="text-lg font-bold bg-[#D55C1F] text-white py-3 px-4 w-full rounded-t-[10px]">
             All Categories
           </h2>
           <ul className="mt-2">
             {categories.map((item, index) => (
               <li
                 key={index}
-                className={`flex items-center justify-between p-3 text-sm font-medium transition duration-200 cursor-pointer whitespace-nowrap ${
+                className={`flex items-center justify-between p-3 text-base font-medium transition duration-200 cursor-pointer ${
                   item.active
                     ? "bg-gray-100 text-black rounded-md"
                     : "hover:bg-gray-200 text-black"
                 }`}
-                style={{ fontFamily: "ReeyRegular" }} // Apply ReeyRegular font
+                style={{ fontFamily: "Manrope, sans-serif", whiteSpace: "normal" }}
               >
                 <div className="flex items-center">
                   <span className="mr-3 text-lg">{item.icon}</span>
-                  {item.name}
+                  <span
+                    className={`${
+                      [
+                        "Masalas and Curry Powders",
+                        "Ready to Eat or Cooked Items",
+                        "Rice and Wheat Products",
+                      ].includes(item.name)
+                        ? "block w-[140px]" 
+                        : "whitespace-nowrap"
+                    }`}
+                  >
+                    {item.name}
+                  </span>
                 </div>
                 <FiChevronRight className="text-gray-500 group-hover:text-black transition text-lg" />
               </li>
