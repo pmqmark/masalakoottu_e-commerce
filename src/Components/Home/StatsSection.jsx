@@ -5,54 +5,54 @@ import { GiPlantSeed } from "react-icons/gi";
 
 const StatsSection = () => {
   return (
-    <div className="bg-orange-600 text-white py-[70PX]">
+    <div className="bg-orange-600 text-white py-[90px]"> {/* Increased height */}
       <div className="max-w-6xl mx-auto flex justify-between items-center text-center">
         
         {/* Happy Customers */}
-        <div className="flex items-center space-x-2">
-          <MdOutlineEmojiPeople className="text-4xl" />
+        <div className="flex items-center space-x-3">
+          <MdOutlineEmojiPeople className="text-5xl" /> {/* Increased icon size */}
           <div className="text-left">
-            <p className="text-2xl font-semibold italic">154</p>
-            <p className="text-green-300">Happy customers</p>
+            <p className="text-3xl font-bold italic">154</p> {/* Increased text size */}
+            <p className="text-green-300 text-lg">Happy customers</p>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="w-[1px] h-12 bg-white"></div>
+        <div className="w-[1px] h-14 bg-white"></div>
 
         {/* Expert Farmers */}
-        <div className="flex items-center space-x-2">
-          <GiFarmer className="text-4xl" />
+        <div className="flex items-center space-x-3">
+          <GiFarmer className="text-5xl" />
           <div className="text-left">
-            <p className="text-2xl font-semibold italic">163</p>
-            <p className="text-green-300">Expert farmers</p>
+            <p className="text-3xl font-bold italic">163</p>
+            <p className="text-green-300 text-lg">Expert farmers</p>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="w-[1px] h-12 bg-white"></div>
+        <div className="w-[1px] h-14 bg-white"></div>
 
         {/* New Products */}
-        <div className="flex items-center space-x-2">
-          <GiPlantSeed className="text-4xl" />
+        <div className="flex items-center space-x-3">
+          <GiPlantSeed className="text-5xl" />
           <div className="text-left">
-            <p className="text-2xl font-semibold italic">360</p>
-            <p className="text-green-300">New products</p>
+            <p className="text-3xl font-bold italic">360</p>
+            <p className="text-green-300 text-lg">New products</p>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="w-[1px] h-12 bg-white"></div>
+        <div className="w-[1px] h-14 bg-white"></div>
 
         {/* Awards Winning */}
-        <div className="flex items-center space-x-2">
-          <FaAward className="text-4xl" />
+        <div className="flex items-center space-x-3">
+          <FaAward className="text-5xl" />
           <div className="text-left">
-            <p className="text-2xl font-semibold italic">22</p>
-            <p className="text-green-300">Awards winning</p>
+            <p className="text-3xl font-bold italic">22</p>
+            <p className="text-green-300 text-lg">Awards winning</p>
           </div>
         </div>
-        
+
       </div>
     </div>
   );
