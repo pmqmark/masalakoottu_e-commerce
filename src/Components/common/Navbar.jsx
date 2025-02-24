@@ -7,6 +7,7 @@ import { HiMail } from "react-icons/hi";
 const Navbar = () => {
   const [cartCount, setCartCount] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false); // State for About dropdown
 
   return (
     <nav className="w-full">
@@ -51,7 +52,20 @@ const Navbar = () => {
         {/* Navigation Links - Desktop */}
         <div className="hidden md:flex space-x-8 text-lg font-semibold mr-[290px]">
           <Link to="/" className="relative pb-2 hover:border-b-2 border-yellow-500">Home</Link>
-          <Link to="/about" className="relative pb-2 hover:border-b-2 border-yellow-500">About ⬇</Link>
+
+          {/* About Section with Dropdown */}
+          <div className="relative group">
+            <button
+              className="relative pb-2 hover:border-b-2 border-yellow-500"
+            >
+              About
+            </button>
+            <div className="absolute bg-white text-black text-lg shadow-lg rounded-md mt-2 w-64 py-2 px-4 space-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <Link to="/about" className="block text-gray-800 hover:text-yellow-500">About</Link>
+              <Link to="/team" className="block text-gray-800 hover:text-yellow-500">Team</Link>
+            </div>
+          </div>
+
           <Link to="/products" className="relative pb-2 hover:border-b-2 border-yellow-500">Products</Link>
           <Link to="/contact" className="relative pb-2 hover:border-b-2 border-yellow-500">Contact</Link>
         </div>
