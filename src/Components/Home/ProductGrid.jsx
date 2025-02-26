@@ -30,19 +30,19 @@ const products = [
 
 const ProductGrid = () => {
   return (
-    <div className="p-6 bg-white">
+    <div className="p-6 bg-white py-6 md:py-12">
       {/* Heading Section */}
       <div className="text-center mb-8">
-        <p className="text-orange-600 italic font-semibold">
+        <p className="text-orange-600 text-md italic font-semibold mb-2">
           Checkout New Products
         </p>
-        <h2 className="text-3xl font-bold text-green-900">
+        <h2 className="lg:text-5xl md:text-4xl text-3xl font-bold text-green-900">
           Today’s new hottest products <br /> available now
         </h2>
       </div>
 
       {/* Product Grid */}
-      <div className="flex flex-wrap justify-center gap-6">
+      <div className="flex flex-wrap justify-center gap-6 md:mt-10 mt-5">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

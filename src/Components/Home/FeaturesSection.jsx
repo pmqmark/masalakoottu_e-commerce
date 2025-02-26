@@ -6,7 +6,7 @@ import { BiStore } from "react-icons/bi";
 export default function FeaturesSection() {
   return (
     <div className="w-full bg-white flex justify-center py-8 overflow-hidden">
-      <div className="flex items-center border border-gray-200 rounded-[6px] shadow-md px-[70px] py-[32px] gap-[80px] bg-white w-[1170px] h-[143px]">
+      <div className="flex md:flex-row flex-col gap-10 items-center border border-gray-200 rounded-[6px] shadow-md px-2 lg:px-[70px] py-[32px] md:gap-1 lg:gap-[80px] bg-white md:w-[730px] w-[350px] lg:w-[1170px]  md:h-[143px]">
         {/* Return Policy */}
         <FeatureItem
           icon={MdOutlineAssignmentReturn}
@@ -15,7 +15,7 @@ export default function FeaturesSection() {
         />
 
         {/* Divider Line */}
-        <div className="h-[64px] w-px bg-gray-300"></div>
+        <div className="md:h-[64px] md:block hidden w-px bg-gray-300"></div>
 
         {/* Free Shipping */}
         <FeatureItem
@@ -25,7 +25,7 @@ export default function FeaturesSection() {
         />
 
         {/* Divider Line */}
-        <div className="h-[64px] w-px bg-gray-300"></div>
+        <div className="md:h-[64px] md:block hidden w-px bg-gray-300"></div>
 
         {/* Store Locator */}
         <FeatureItem

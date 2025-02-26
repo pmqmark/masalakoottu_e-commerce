@@ -14,7 +14,7 @@ const Navbar = () => {
       {/* Top Bar */}
       <div className="hidden md:flex">
         <div className="flex-1 bg-[#E65722]"></div>
-        <div className="w-[1060px] bg-green-900 text-white text-sm py-[10px] px-8 flex justify-between items-center rounded-l-[3px]">
+        <div className="lg:w-[1060px] bg-green-900 text-white text-sm py-[10px] px-8 flex justify-between items-center rounded-l-[3px]">
           <div className="flex items-center space-x-6 text-[14px]">
             <div className="flex items-center space-x-2">
               <IoCall className="text-yellow-400" />
@@ -25,7 +25,7 @@ const Navbar = () => {
               <span>needhelp@company.com</span>
             </div>
           </div>
-          <div className="space-x-4 text-[14px] mr-[62px]">
+          <div className="space-x-4 text-[14px] lg:px-14">
             <Link to="/support" className="hover:text-yellow-400">Support</Link> /
             <Link to="/wishlist" className="hover:text-yellow-400"> Wish List</Link> /
             <Link to="/account" className="hover:text-yellow-400"> My Account</Link>
@@ -40,7 +40,7 @@ const Navbar = () => {
           <img
             src="/assets/logo/logo.webp"
             alt="Masala Koottu"
-            className="w-[180px] md:w-[220px] h-auto"
+            className="w-[150px] lg:w-[220px] h-auto"
           />
         </div>
 
@@ -50,13 +50,13 @@ const Navbar = () => {
         </button>
 
         {/* Navigation Links - Desktop */}
-        <div className="hidden md:flex space-x-8 text-lg font-semibold mr-[290px]">
+        <div className="hidden md:flex lg:space-x-8 space-x-4 text-md lg:text-lg font-semibold ">
           <Link to="/" className="relative pb-2 hover:border-b-2 border-yellow-500">Home</Link>
 
           {/* About Section with Dropdown */}
           <div className="relative group">
             <button
-              className="relative pb-2 hover:border-b-2 border-yellow-500"
+              className="relative text-md lg:text-lg pb-2 hover:border-b-2 border-yellow-500"
             >
               About
             </button>
@@ -66,12 +66,12 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Link to="/products" className="relative pb-2 hover:border-b-2 border-yellow-500">Products</Link>
-          <Link to="/contact" className="relative pb-2 hover:border-b-2 border-yellow-500">Contact</Link>
+          <Link to="/products" className="relative pb-2 hover:border-b-2 text-md lg:text-lg border-yellow-500">Products</Link>
+          <Link to="/contact" className="relative pb-2 hover:border-b-2 text-md lg:text-lg border-yellow-500">Contact</Link>
         </div>
 
         {/* Right Section: Icons */}
-        <div className="hidden md:flex items-center space-x-6 mr-[60px] ">
+        <div className="hidden md:flex items-center lg:space-x-6 space-x-4 px-2 lg:px-14 "> 
           <Link to="/login" className="flex items-center space-x-3">
             <FaUser className="text-white" />
             <div className="flex space-x-2">
@@ -80,12 +80,12 @@ const Navbar = () => {
               <span className="text-white text-sm">Register</span>
             </div>
           </Link>
-          <button className="p-3 bg-white text-green-900 rounded-full shadow-md hover:bg-gray-200">
+          <button className="lg:p-3 p-2 bg-white text-green-900 rounded-full shadow-md hover:bg-gray-200">
             <FaSearch className="text-2xl" />
           </button>
           <div className="relative">
             <Link to='/cartpage'>
-              <button className="p-3 bg-yellow-400 text-green-900 rounded-full shadow-md hover:bg-yellow-500">
+              <button className="lg:p-3 p-2 bg-yellow-400 text-green-900 rounded-full shadow-md hover:bg-yellow-500">
                 <FaShoppingCart className="text-2xl" />
               </button>
             </Link>
