@@ -9,7 +9,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 w-[270px] h-[400px] border border-gray-200 flex flex-col justify-between">
+    <div className="bg-white shadow-md rounded-lg p-4 md:w-[270px] h-[400px] w-full border border-gray-200 flex flex-col justify-between">
       {/* Product Image */}
       <img
         src={product.image}
