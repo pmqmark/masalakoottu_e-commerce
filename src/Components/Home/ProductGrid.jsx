@@ -6,25 +6,25 @@ const products = [
     id: 1,
     name: "SPECIAL MEAT MASALA",
     price: 90,
-    image: "https://via.placeholder.com/150",
+    image: "/assets/products/599F6C5D61F5960879B2CFC6F1_1737805615747.jpg",
   },
   {
     id: 2,
     name: "Black Pepper Powder",
     price: 130,
-    image: "https://via.placeholder.com/150",
+    image: "/assets/products/9FA2A2CB562552C243A7D6FBA6_1737806203835.jpg",
   },
   {
     id: 3,
     name: "KASHMIRI CHILLY POWDER",
     price: 220,
-    image: "https://via.placeholder.com/150",
+    image: "/assets/products/kashmiri-chilly-powder-byadagi-250-g-2030067964-x6wzurhn.webp",
   },
   {
     id: 4,
     name: "GARAM MASALA",
     price: 98,
-    image: "https://via.placeholder.com/150",
+    image: "/assets/products/garam-masala-100-g-2030065970-t8puao2w.avif",
   },
 ];
 

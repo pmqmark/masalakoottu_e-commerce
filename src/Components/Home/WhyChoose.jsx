@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -37,9 +38,11 @@ const WhyChoose = () => {
           Aliquam viverra arcu. Donec aliquet blandit enim. Suspendisse id quam sed eros tincidunt luctus sit amet eu nibh egestas tempus turpis, sit amet mattis magna varius non.
         </p>
         <div className="flex justify-center md:justify-start">
-          <button className="mt-6 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg">
-            Discover more
-          </button>
+          <Link to="/about">
+            <button className="mt-6 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg">
+              Discover more
+            </button>
+          </Link>
         </div>
       </div>
 
