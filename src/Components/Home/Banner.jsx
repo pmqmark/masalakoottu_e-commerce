@@ -4,8 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FiChevronRight } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/pagination";
-
-// Import Manrope Font
 import "@fontsource/manrope"; 
 
 const categories = [
@@ -37,10 +35,45 @@ const Banner = () => {
         backgroundPosition: "center 20%",
       }}
     >
-      <div className="flex w-full">
-        {/* Sidebar */}
+      <div className="flex flex-col lg:flex-row w-full gap-4">
+        
+        {/* Banner Section - Moves above categories in mobile */}
+        <div className="w-full order-1 lg:order-2">
+          <Swiper spaceBetween={30} pagination={{ clickable: true }} loop autoplay>
+            {slides.map((slide, index) => (
+              <SwiperSlide key={index} className="relative w-full">
+                <img
+                  src={slide.img}
+                  alt="banner"
+                  className="w-full h-[400px] lg:h-[612px] object-cover mt-[70px]"
+                />
+                <motion.div
+                  className="absolute top-20 left-10 bg-[#F3F3ED] p-6 rounded-md shadow-lg"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <h3 className="text-lg lg:text-xl font-semibold text-[#2A491D]">
+                    {slide.subtitle}
+                  </h3>
+                  <h2 className="text-2xl lg:text-4xl font-bold text-[#7D8978]">
+                    {slide.title}
+                  </h2>
+                  <motion.button
+                    className="mt-4 px-6 py-2 bg-[#E65722] text-white rounded-full shadow-md"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    Shop Now
+                  </motion.button>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Sidebar - Moves below the image in mobile */}
         <motion.aside
-          className="max-w-[300px] w-full h-auto bg-white text-black shadow-md p-4 ml-[80px] mt-[50px] rounded-t-[20px]"
+          className="max-w-full lg:max-w-[300px] w-full h-auto bg-white text-black shadow-md p-4 mx-auto lg:ml-[80px] mt-4 lg:mt-[50px] rounded-t-[20px] order-2 lg:order-1"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -80,46 +113,12 @@ const Banner = () => {
             ))}
           </ul>
         </motion.aside>
-
-        {/* Banner Section */}
-        <div className="w-full overflow-hidden">
-          <Swiper spaceBetween={30} pagination={{ clickable: true }} loop autoplay>
-            {slides.map((slide, index) => (
-              <SwiperSlide key={index} className="relative w-full">
-                <img
-                  src={slide.img}
-                  alt="banner"
-                  className="w-full h-[612px] object-cover mt-[70px]"
-                />
-                <motion.div
-                  className="absolute top-20 left-10 bg-[#F3F3ED] p-6 rounded-md shadow-lg"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  <h3 className="text-xl font-semibold text-[#2A491D]">
-                    {slide.subtitle}
-                  </h3>
-                  <h2 className="text-4xl font-bold text-[#7D8978]">
-                    {slide.title}
-                  </h2>
-                  <motion.button
-                    className="mt-4 px-6 py-2 bg-[#E65722] text-white rounded-full shadow-md"
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    Shop Now
-                  </motion.button>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          {/* Scroll to Top Button */}
-          <button className="fixed bottom-4 right-4 bg-[#E65722] p-3 rounded-full shadow-md">
-            ⬆️
-          </button>
-        </div>
       </div>
+
+      {/* Scroll to Top Button */}
+      <button className="fixed bottom-4 right-4 bg-[#E65722] p-3 rounded-full shadow-md">
+        ⬆️
+      </button>
     </div>
   );
 };
