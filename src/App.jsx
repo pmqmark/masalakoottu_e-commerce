@@ -9,6 +9,8 @@ import ContactPage from './Pages/Contact/ContactPage';
 import TeamPage from './Pages/Team/TeamPage';
 import ProductPage from './Pages/product/ProductPage';
 import AboutPage from './Pages/about/AboutPage';
+import TermsAndConditions from './Pages/Terms/TermsAndConditions';
+import PrivacyPolicys from './Pages/Privacy/PrivacyPolicy';
 
 const App = () => {
   return (
@@ -22,6 +24,8 @@ const App = () => {
             <Route path="/contact" element={<ContactPage />} /> 
             <Route path="/team" element={<TeamPage />} /> 
             <Route path="/products" element={<ProductPage />} /> 
+            <Route path="/terms" element={<TermsAndConditions/> } />
+            <Route path="/privacy" element={<PrivacyPolicys/> } />
             <Route path="/about" element={<AboutPage />} />
           </Route>
         </Routes>
