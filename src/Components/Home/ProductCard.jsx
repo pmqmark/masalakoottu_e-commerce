@@ -1,69 +1,47 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useCart } from "../../Components/CartPage/CartContext";
+import { useNavigate } from "react-router-dom"; // For redirection
 
 const ProductCard = ({ product }) => {
-  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+  const [quantity, setQuantity] = useState(1); // State for quantity
 
-  const handleIncrease = () => setQuantity(quantity + 1);
-  const handleDecrease = () => {
-    if (quantity > 1) setQuantity(quantity - 1);
+  const handleAddToCart = () => {
+    addToCart({ ...product, quantity }); // Add product with selected quantity
+    navigate("/cartpage"); // Redirect to cart page
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 md:w-[270px] h-[400px] w-full border border-gray-200 flex flex-col justify-between">
-      {/* Product Image */}
-      <img
-        src={product.image}
-        alt={product.name}
-        className="w-full h-48 object-cover rounded-md"
-      />
+    <div className="border p-4 rounded-lg">
+      <img src={product.image} alt={product.name} className="w-full h-40 object-cover" />
+      <h3 className="text-lg font-bold">{product.name}</h3>
+      <p className="text-gray-700">${product.price}</p>
 
-      {/* Product Details */}
-      <div className="text-center">
-        {/* Star Rating */}
-        <div className="flex justify-center mb-1">
-          {[...Array(5)].map((_, index) => (
-            <span key={index} className="text-yellow-500 text-lg">★</span>
+      {/* Quantity Selector */}
+      <div className="mt-2">
+        <label htmlFor={`quantity-${product.id}`} className="mr-2">Quantity:</label>
+        <select
+          id={`quantity-${product.id}`}
+          value={quantity}
+          onChange={(e) => setQuantity(Number(e.target.value))}
+          className="border px-2 py-1 rounded"
+        >
+          {[...Array(10).keys()].map((num) => (
+            <option key={num + 1} value={num + 1}>
+              {num + 1}
+            </option>
           ))}
-        </div>
-
-        {/* Product Name */}
-        <h2 className="text-lg font-bold text-green-900">{product.name}</h2>
-        
-        {/* Price */}
-        <p className="text-gray-700 text-lg font-semibold">₹{product.price}</p>
+        </select>
       </div>
 
-      {/* Quantity Selector & Add to Cart in One Line */}
-      <div className="flex items-center justify-between mt-2">
-        <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
-          <button
-            className="bg-green-700 text-white px-3 py-1"
-            onClick={handleDecrease}
-          >
-            -
-          </button>
-          <input
-            type="text"
-            value={quantity}
-            readOnly
-            className="w-8 text-center border-l border-r border-gray-300"
-          />
-          <button
-            className="bg-green-700 text-white px-3 py-1"
-            onClick={handleIncrease}
-          >
-            +
-          </button>
-        </div>
-
-        {/* Add to Cart Button */}
-        <Link to="/cartpage">
-          <button className="bg-orange-500 text-white px-4 py-2 rounded-md">
-            Add to cart
-          </button>
-        </Link>
-      </div>
+      {/* Add to Cart Button */}
+      <button
+        onClick={handleAddToCart}
+        className="bg-green-500 text-white px-4 py-2 mt-2 rounded-md w-full"
+      >
+        Add to Cart
+      </button>
     </div>
   );
 };
