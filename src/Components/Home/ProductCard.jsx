@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
@@ -56,9 +57,12 @@ const ProductCard = ({ product }) => {
           </button>
         </div>
 
-        <button className="bg-orange-500 text-white px-4 py-2 rounded-md">
-          Add to cart
-        </button>
+        {/* Add to Cart Button */}
+        <Link to="/cartpage">
+          <button className="bg-orange-500 text-white px-4 py-2 rounded-md">
+            Add to cart
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -15,16 +15,21 @@ const Navbar = () => {
       <div className="hidden md:flex">
         <div className="flex-1 bg-[#E65722]"></div>
         <div className="lg:w-[1060px] bg-green-900 text-white text-sm py-[10px] px-8 flex justify-between items-center rounded-l-[3px]">
-          <div className="flex items-center space-x-6 text-[14px]">
-            <div className="flex items-center space-x-2">
-              <IoCall className="text-yellow-400" />
-              <span>+92 (307) 68 - 06860</span>
-            </div>
-            <div className="flex items-center space-x-2 pl-4">
-              <HiMail className="text-yellow-400" />
-              <span>needhelp@company.com</span>
-            </div>
-          </div>
+        <div className="flex items-center space-x-6 text-[14px]">
+  <div className="flex items-center space-x-2">
+    <IoCall className="text-yellow-400" />
+    <a href="tel:+923076806860" className="text-white hover:text-yellow-400">
+      +92 (307) 68 - 06860
+    </a>
+  </div>
+  <div className="flex items-center space-x-2 pl-4">
+    <HiMail className="text-yellow-400" />
+    <a href="mailto:needhelp@company.com" className="text-white hover:text-yellow-400">
+      needhelp@company.com
+    </a>
+  </div>
+</div>
+
           <div className="space-x-4 text-[14px] lg:px-14">
             <Link to="/support" className="hover:text-yellow-400">Support</Link> /
             <Link to="/wishlist" className="hover:text-yellow-400"> Wish List</Link> /
@@ -50,7 +55,7 @@ const Navbar = () => {
         </button>
 
         {/* Navigation Links - Desktop */}
-        <div className="hidden md:flex lg:space-x-8 space-x-4 text-md lg:text-lg font-semibold ">
+        <div className="hidden md:flex lg:space-x-8 space-x-4 text-md lg:text-lg font-semibold  mr-[220px]">
           <Link to="/" className="relative pb-2 hover:border-b-2 border-yellow-500">Home</Link>
 
           {/* About Section with Dropdown */}
