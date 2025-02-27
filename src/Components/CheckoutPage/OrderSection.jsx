@@ -32,20 +32,20 @@ const OrderSection = () => {
             {data.map((item, index) => (
               <tr key={index} className="text-lg ">
                 <td className="py-4 text-gray-500">{item.name}</td>
-                <td className="py-2 text-right text-gray-500">${item.price.toFixed(2)+" USD"}</td>
+                <td className="py-2 text-right text-gray-500">₹{item.price.toFixed(2)+" USD"}</td>
               </tr>
             ))}
             <tr className="text-lg ">
               <td className="py-4 text-gray-500">Subtotal</td>
-              <td className="py-2 text-right text-gray-500">${subtotal.toFixed(2)+" USD"}</td>
+              <td className="py-2 text-right text-gray-500">₹{subtotal.toFixed(2)+" USD"}</td>
             </tr>
             <tr className="text-lg ">
               <td className="py-4 text-gray-500">Shipping</td>
-              <td className="py-2 text-right text-gray-500">${shippingCost.toFixed(2)+" USD"}</td>
+              <td className="py-2 text-right text-gray-500">₹{shippingCost.toFixed(2)+" USD"}</td>
             </tr>
             <tr className="text-lg font-bold text-green-600 border-b ">
               <td className="py-4">Total</td>
-              <td className="py-2 text-right">${total.toFixed(2)+" USD"}</td>
+              <td className="py-2 text-right">₹{total.toFixed(2)+" USD"}</td>
             </tr>
           </tbody>
         </table>
