@@ -42,6 +42,11 @@ const slides = [
 const Banner = () => {
   const navigate = useNavigate();
 
+  // Function to handle the click event
+  const handleShopNowClick = () => {
+    navigate("/products"); // Navigate to the products page
+  };
+
   return (
     <div
       style={{
@@ -116,6 +121,7 @@ const Banner = () => {
                     <motion.button
                       className="mt-5 lg:px-6 py-3 px-4 text-sm font-bold bg-green-600 text-white rounded-full shadow-md"
                       whileHover={{ scale: 1.1 }}
+                      onClick={handleShopNowClick} // Trigger the navigate function
                     >
                       Shop Now
                     </motion.button>
