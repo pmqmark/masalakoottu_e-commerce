@@ -16,13 +16,13 @@ const ProductCard = ({ product }) => {
     <div className="border p-4 rounded-lg">
       <img src={product.image} alt={product.name} className="w-full h-40 object-cover" />
       <h3 className="text-lg font-bold">{product.name}</h3>
-      <p className="text-gray-700">${product.price}</p>
+      <p className="text-gray-700">₹{product.price}</p>
 
       {/* Quantity Selector */}
       <div className="mt-2">
-        <label htmlFor={`quantity-${product.id}`} className="mr-2">Quantity:</label>
+        <label htmlFor={`quantity-₹{product.id}`} className="mr-2">Quantity:</label>
         <select
-          id={`quantity-${product.id}`}
+          id={`quantity-₹{product.id}`}
           value={quantity}
           onChange={(e) => setQuantity(Number(e.target.value))}
           className="border px-2 py-1 rounded"
