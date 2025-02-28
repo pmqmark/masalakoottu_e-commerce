@@ -35,11 +35,22 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h3 className="text-lg md:text-xl font-bold">Contact <span className="text-yellow-400">—</span></h3>
-          <p className="mt-4">Valentin, Street Road 24, New York, USA - 67452</p>
-          <p className="mt-2 font-bold text-yellow-300">+92 (8800) 68 - 8960</p>
-          <p className="mt-2">info@example.com</p>
-        </div>
+  <h3 className="text-lg md:text-xl font-bold">
+    Contact <span className="text-yellow-400">—</span>
+  </h3>
+  <p className="mt-4">Valentin, Street Road 24, New York, USA - 67452</p>
+  <p className="mt-2 font-bold text-yellow-300">
+    <a href="tel:+928800688960" className="hover:underline">
+      +92 (8800) 68 - 8960
+    </a>
+  </p>
+  <p className="mt-2">
+    <a href="mailto:info@example.com" className="hover:underline">
+      info@example.com
+    </a>
+  </p>
+</div>
+
         <div>
           <h3 className="text-lg md:text-xl font-bold">Gallery <span className="text-yellow-400">—</span></h3>
           <div className="grid grid-cols-3 gap-2 mt-6">

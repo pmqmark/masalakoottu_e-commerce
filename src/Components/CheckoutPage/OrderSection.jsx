@@ -15,7 +15,7 @@ const OrderSection = () => {
   };
   // Calculate totals
   const subtotal = data.reduce((acc, item) => acc + item.price, 0);
-  const shippingCost = subtotal > 0 ? 5.99 : 0;
+  const shippingCost = subtotal > 0 ? 50.00 : 0;
   const total = subtotal + shippingCost;
 
   return (
@@ -70,7 +70,7 @@ const OrderSection = () => {
             checked={selected === "bank"}
             readOnly
           />
-          Direct Bank Transfer
+          Cah on Delivery
         </label>
         <AnimatePresence>
           {selected === "bank" && (
@@ -103,7 +103,7 @@ const OrderSection = () => {
             checked={selected === "paypal"}
             readOnly
           />
-          PayPal Payment
+         credit/debit cards or paypal
         </label>
         <img src={paypal} className="w-10 h-10"></img>
         </div>
