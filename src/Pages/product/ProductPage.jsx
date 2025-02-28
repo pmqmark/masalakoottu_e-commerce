@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useCart } from "../../Components/CartPage/CartContext"; 
+import { useNavigate } from "react-router-dom"; 
 
 const categories = [
   { name: "Masalas and Curry Powders", icon: "🌶️" },
@@ -13,37 +15,50 @@ const categories = [
 
 const allProducts = {
   "Masalas and Curry Powders": [
-    { name: "Turmeric Powder", price: 50 },
-    { name: "Red Chilli Powder", price: 80 },
-    { name: "Coriander Powder", price: 60 },
-    { name: "Garam Masala", price: 90 },
-    { name: "Cumin Powder", price: 70 },
-    { name: "Sambar Powder", price: 85 },
+    { id: 1, name: "Turmeric Powder", price: 50 },
+    { id: 2, name: "Red Chilli Powder", price: 80 },
+    { id: 3, name: "Coriander Powder", price: 60 },
+    { id: 4, name: "Garam Masala", price: 90 },
+    { id: 5, name: "Cumin Powder", price: 70 },
+    { id: 6, name: "Sambar Powder", price: 85 },
   ],
   "Millet Products": [
-    { name: "Ragi Flour", price: 40 },
-    { name: "Foxtail Millet", price: 60 },
-    { name: "Barnyard Millet", price: 55 },
-    { name: "Kodo Millet", price: 65 },
-    { name: "Little Millet", price: 75 },
-    { name: "Bajra Flour", price: 50 },
+    { id: 7, name: "Ragi Flour", price: 40 },
+    { id: 8, name: "Foxtail Millet", price: 60 },
+    { id: 9, name: "Barnyard Millet", price: 55 },
+    { id: 10, name: "Kodo Millet", price: 65 },
+    { id: 11, name: "Little Millet", price: 75 },
+    { id: 12, name: "Bajra Flour", price: 50 },
   ],
 };
 
-const ProductCard = ({ name, price }) => (
-  <div className="w-full sm:w-[270px] bg-gray-200 rounded-lg p-4 shadow-lg">
-    <div className="w-full h-[275px] bg-gray-300 flex items-center justify-center text-black font-bold">
-      270X275
+const ProductCard = ({ product }) => {
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    navigate("/cartpage"); // Redirect to cart page
+  };
+
+  return (
+    <div className="w-full sm:w-[270px] bg-gray-200 rounded-lg p-4 shadow-lg">
+      <div className="w-full h-[275px] bg-gray-300 flex items-center justify-center text-black font-bold">
+        270X275
+      </div>
+      <div className="text-center mt-2">
+        <p className="text-orange-700 font-bold">{product.name}</p>
+        <p className="text-gray-600">₹{product.price}</p>
+        <button
+          onClick={handleAddToCart}
+          className="mt-2 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition"
+        >
+          Add to cart
+        </button>
+      </div>
     </div>
-    <div className="text-center mt-2">
-      <p className="text-orange-700 font-bold">{name}</p>
-      <p className="text-gray-600">${price}</p>
-      <button className="mt-2 w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-        Add to cart
-      </button>
-    </div>
-  </div>
-);
+  );
+};
 
 const Sidebar = ({ selectedCategory, setSelectedCategory }) => (
   <div className="hidden lg:block w-[250px] p-4 bg-gray-100 rounded-lg">
@@ -103,8 +118,8 @@ const ProductPage = () => {
 
       {/* Product Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-        {allProducts[selectedCategory]?.slice(0, 6).map((product, index) => (
-          <ProductCard key={index} name={product.name} price={product.price} />
+        {allProducts[selectedCategory]?.slice(0, 6).map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>

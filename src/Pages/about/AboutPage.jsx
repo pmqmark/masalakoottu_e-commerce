@@ -8,7 +8,13 @@ import TeamSection from "../../Components/Teams/TeamCard";
 const AboutPage = () => {
   return (
     <div>
-      <TopBanner title="About" smallhead="Home / About" image={grapesbanner} />
+     <TopBanner
+  title="About"
+  smallhead="Home / About"
+  image={grapesbanner}
+  className="relative -z-10 "
+/>
+
       <AboutSection />
       <StatsSection />
       <div className="mt-4"> <TeamSection /></div>

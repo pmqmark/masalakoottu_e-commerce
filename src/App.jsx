@@ -11,10 +11,11 @@ import ProductPage from './Pages/product/ProductPage';
 import AboutPage from './Pages/about/AboutPage';
 import TermsAndConditions from './Pages/Terms/TermsAndConditions';
 import PrivacyPolicys from './Pages/Privacy/PrivacyPolicy';
+import LoginForm from './Pages/LoginorRegister/LoginForm';
 
 const App = () => {
   return (
-    <CartProvider> {/* Wrap everything with CartProvider */}
+    <CartProvider>
       <Router> 
         <Routes>
           <Route element={<Layout />}>
@@ -27,6 +28,7 @@ const App = () => {
             <Route path="/terms" element={<TermsAndConditions/> } />
             <Route path="/privacy" element={<PrivacyPolicys/> } />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/login" element={<LoginForm /> } />
           </Route>
         </Routes>
       </Router>
