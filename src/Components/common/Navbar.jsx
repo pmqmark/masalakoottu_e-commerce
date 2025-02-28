@@ -7,10 +7,10 @@ import { HiMail } from "react-icons/hi";
 const Navbar = () => {
   const [cartCount, setCartCount] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false); // State for About dropdown
+  const [aboutOpen, setAboutOpen] = useState(false); 
 
   return (
-    <nav className="w-full">
+    <nav className="  w-full z-50">
       {/* Top Bar */}
       <div className="hidden md:flex">
         <div className="flex-1 bg-[#E65722]"></div>
@@ -31,9 +31,9 @@ const Navbar = () => {
 </div>
 
           <div className="space-x-4 text-[14px] lg:px-14">
-            <Link to="/support" className="hover:text-yellow-400">Support</Link> /
+            <Link to="/contact" className="hover:text-yellow-400">Support</Link> /
             <Link to="/wishlist" className="hover:text-yellow-400"> Wish List</Link> /
-            <Link to="/account" className="hover:text-yellow-400"> My Account</Link>
+            <Link to="/LOGIN" className="hover:text-yellow-400"> My Account</Link>
           </div>
         </div>
       </div>
@@ -60,16 +60,16 @@ const Navbar = () => {
 
           {/* About Section with Dropdown */}
           <div className="relative group">
-            <button
-              className="relative text-md lg:text-lg pb-2 hover:border-b-2 border-yellow-500"
-            >
-              About
-            </button>
-            <div className="absolute bg-white text-black text-lg shadow-lg rounded-md mt-2 w-64 py-2 px-4 space-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <Link to="/about" className="block text-gray-800 hover:text-yellow-500">About</Link>
-              <Link to="/team" className="block text-gray-800 hover:text-yellow-500">Team</Link>
-            </div>
-          </div>
+  <button
+    className="relative text-md lg:text-lg pb-2 hover:border-b-2 border-yellow-500"
+  >
+    About
+  </button>
+  <div className="absolute bg-white text-black text-lg shadow-lg rounded-md mt-2 w-64 py-2 px-4 space-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
+    <Link to="/about" className="block text-gray-800 hover:text-yellow-500">About</Link>
+    <Link to="/team" className="block text-gray-800 hover:text-yellow-500">Team</Link>
+  </div>
+</div>
 
           <Link to="/products" className="relative pb-2 hover:border-b-2 text-md lg:text-lg border-yellow-500">Products</Link>
           <Link to="/contact" className="relative pb-2 hover:border-b-2 text-md lg:text-lg border-yellow-500">Contact</Link>
