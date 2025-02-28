@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Table = ({ data, onRemove, onQuantityChange }) => {
   // Calculate totals
   const subtotal = data.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const shippingCost = subtotal > 0 ? 5.99 : 0;
+  const shippingCost = subtotal > 0 ? 50.00 : 0;
   const total = subtotal + shippingCost;
 
   return (
